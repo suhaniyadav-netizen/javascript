@@ -118,13 +118,38 @@
 
 
 // TASK : print the numbers from 1-10 and soon it should stop after reaching 10 after interval of 1 sec
-let count = 1;
-let interval = setInterval(() => {
-    console.log(count);
-    if (count === 10) {
-        clearInterval(interval);
-    }
-    count++;
-}, 1000);
+// let count = 1;
+// let interval = setInterval(() => {
+//     console.log(count);
+//     if (count === 10) {
+//         clearInterval(interval);
+//     }
+//     count++;
+// }, 1000);
 
+
+// console.log("before Timeout")
+// setTimeout(() => {
+//     console.log("inside Timeout after 3 sec")
+// }, 0);
+// console.log("after Timeout")
+
+
+// DOM MANIPULATION TASK : Add the student names to the list on clicking the button and
+// clear the input field after adding the name to the list
+
+const name = document.querySelector("#name")
+const btn = document.querySelector(".btn")
+const list=document.querySelector(".list")
+btn.addEventListener("click",()=>{
+    const li=document.createElement("li")
+    const del=document.createElement("button")
+    del.innerText="Delete"
+    li.innerText=name.value;                   // to add the input name as li item to the list
+    del.addEventListener("click",()=>{
+        list.removeChild(li) })               // to delete the particular li item on clicking delete button
+    li.appendChild(del)
+    list.appendChild(li)
+    name.value=""
+})
 
