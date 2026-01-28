@@ -34,8 +34,8 @@
 // function message()
 // {    alert("Button Clicked")
 // }
-const btn = document.querySelector("button")
-btn.classList.add("btn")
+// const btn = document.querySelector("button")
+// btn.classList.add("btn")
 // btn.addEventListener("click", message)      // click type of event
 // btn.removeEventListener("click",message)
 // btn.addEventListener("mouseover", message)  // mouseover type of event 
@@ -48,14 +48,83 @@ btn.classList.add("btn")
 //     console.log("Form Submitted")
 // })
 
-const container=document.querySelector(".container")
-const outer=document.querySelector(".outer")
-const button=document.querySelector("button")
+// const container=document.querySelector(".container")
+// const outer=document.querySelector(".outer")
+// const button=document.querySelector("button")
 
-container.addEventListener("click", ()=>{console.log("Div")} , true)      // capturing phase
-outer.addEventListener("click", ()=>{console.log("Outer Div")} , true) 
-button.addEventListener("click", ()=>{console.log("Button")} , true) 
+// container.addEventListener("click", ()=>{console.log("Div")} , true)      // capturing phase
+// outer.addEventListener("click", ()=>{console.log("Outer Div")} , true) 
+// button.addEventListener("click", ()=>{console.log("Button")} , true) 
 
 // container.addEventListener("click", ()=>{ console.log("Div")})     // bubbling phase by default false 
 // outer.addEventListener("click", ()=>{ console.log("Outer Div")}) 
 // button.addEventListener("click", ()=>{ console.log("Button")}) 
+
+
+
+
+// Call Stack functions
+// function first(){
+//     second();
+// }
+// function second(){
+//     third();
+// }
+// function third(){
+//     console.trace();
+// }  
+// first();  
+
+
+// function infinite (){
+//     infinite();
+// }
+// infinite();  // uncommenting this line will cause a stack overflow error
+
+
+// let total = 40    // let undefined error is ReferenceError
+
+// function calculateTotal() {
+//     let total = 50;
+//     console.log(total);
+// }
+// calculateTotal();
+
+
+
+// Synchronous and Acsynchronous JS
+
+// console.log("Start");
+// setTimeout(() => {console.log("This is asynchronous message");}, 2000);  
+// console.log("End"); 
+
+
+
+// SET TIMEOUT AND SET INTERVAL FUNCTIONS 
+
+// setTimeout(()=>{
+//     console.log("Line after 5 secs")
+// },5000)
+
+// setTimeout(()=>{
+//     alert("Line after 2 secs")
+// },2000)
+
+// setInterval(()=>{
+//     console.log("Set Interval")
+// },2000)
+
+// clearInterval()
+
+
+// TASK : print the numbers from 1-10 and soon it should stop after reaching 10 after interval of 1 sec
+let count = 1;
+let interval = setInterval(() => {
+    console.log(count);
+    if (count === 10) {
+        clearInterval(interval);
+    }
+    count++;
+}, 1000);
+
+
