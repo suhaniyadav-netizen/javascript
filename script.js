@@ -138,22 +138,42 @@
 // DOM MANIPULATION TASK : Add the student names to the list on clicking the button and
 // clear the input field after adding the name to the list
 
-const name = document.querySelector("#name")
-const btn = document.querySelector(".btn")
-const list=document.querySelector(".list")
-btn.addEventListener("click",()=>{
-    if(name.value===""){
-        alert("Please enter a name");
-        return;                                   // to avoid adding empty names to the list and not showing del btn
-    }                                  
-    const li=document.createElement("li")
-    const del=document.createElement("button")
-    del.innerText="Delete"
-    li.innerText=name.value;                      // to add the input name as li item to the list
-    del.addEventListener("click",()=>{
-        list.removeChild(li) })                   // to delete the particular li item on clicking delete button
-    li.appendChild(del)
-    list.appendChild(li)                       
-    name.value=""
-})
+// const name = document.querySelector("#name")
+// const btn = document.querySelector(".btn")
+// const list=document.querySelector(".list")
+// btn.addEventListener("click",()=>{
+//     if(name.value===""){
+//         alert("Please enter a name");
+//         return;                                   // to avoid adding empty names to the list and not showing del btn
+//     }                                  
+//     const li=document.createElement("li")
+//     const del=document.createElement("button")
+//     del.innerText="Delete"
+//     li.innerText=name.value;                      // to add the input name as li item to the list
+//     del.addEventListener("click",()=>{
+//         list.removeChild(li) })                   // to delete the particular li item on clicking delete button
+//     li.appendChild(del)
+//     list.appendChild(li)                       
+//     name.value=""
+// })
 
+
+// CALL STACK FUNCTIONS : LIF0 
+// a callback function is one that we give to another function
+// Output : Start End This is asynchronous message ( even if it's o secs o/p will be same )
+
+console.log("Start")                                                     
+setTimeout(() => {console.log("After 6 secs");}, 2000)
+console.log("End")
+
+function print(num){
+    setTimeout(() => {
+    console.log("Inside Print")
+    num()
+    }, 6000);
+}
+
+function callback(){
+    console.log("Inside Callback")
+}
+print(callback)
