@@ -142,14 +142,18 @@ const name = document.querySelector("#name")
 const btn = document.querySelector(".btn")
 const list=document.querySelector(".list")
 btn.addEventListener("click",()=>{
+    if(name.value===""){
+        alert("Please enter a name");
+        return;                                   // to avoid adding empty names to the list and not showing del btn
+    }                                  
     const li=document.createElement("li")
     const del=document.createElement("button")
     del.innerText="Delete"
-    li.innerText=name.value;                   // to add the input name as li item to the list
+    li.innerText=name.value;                      // to add the input name as li item to the list
     del.addEventListener("click",()=>{
-        list.removeChild(li) })               // to delete the particular li item on clicking delete button
+        list.removeChild(li) })                   // to delete the particular li item on clicking delete button
     li.appendChild(del)
-    list.appendChild(li)
+    list.appendChild(li)                       
     name.value=""
 })
 
