@@ -162,18 +162,38 @@
 // a callback function is one that we give to another function
 // Output : Start End This is asynchronous message ( even if it's o secs o/p will be same )
 
-console.log("Start")                                                     
-setTimeout(() => {console.log("After 6 secs");}, 2000)
-console.log("End")
+// console.log("Start")                                                     
+// setTimeout(() => {console.log("After 6 secs");}, 2000)
+// console.log("End")
 
-function print(num){
+// function print(num){
+//     setTimeout(() => {
+//     console.log("Inside Print")
+//     num()
+//     }, 6000);
+// }
+
+// function callback(){
+//     console.log("Inside Callback")
+// }
+// print(callback)
+
+// Callback Hell
+// When we have multiple nested callbacks, it can lead to code that is hard to read and maintain, 
+// often referred to as "callback hell" or "pyramid of doom".
+
+console.log("Starting homework...");
+
+setTimeout(() => {
+    console.log("Homework done!");
+    console.log("Starting dinner...");
+    
     setTimeout(() => {
-    console.log("Inside Print")
-    num()
-    }, 6000);
-}
+        console.log("Dinner done!");
+        console.log("Getting ready to go out...");
 
-function callback(){
-    console.log("Inside Callback")
-}
-print(callback)
+        setTimeout(() => {
+            console.log("Going to the playground!");
+        }, 1000); // after dinner
+    }, 1500); // dinner time
+}, 2000); // homework time
