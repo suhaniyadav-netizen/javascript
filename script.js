@@ -135,6 +135,8 @@
 // console.log("after Timeout")
 
 
+
+
 // DOM MANIPULATION TASK : Add the student names to the list on clicking the button and
 // clear the input field after adding the name to the list
 
@@ -158,6 +160,7 @@
 // })
 
 
+
 // CALL STACK FUNCTIONS : LIF0 
 // a callback function is one that we give to another function
 // Output : Start End This is asynchronous message ( even if it's o secs o/p will be same )
@@ -178,22 +181,63 @@
 // }
 // print(callback)
 
+
+
 // Callback Hell
 // When we have multiple nested callbacks, it can lead to code that is hard to read and maintain, 
 // often referred to as "callback hell" or "pyramid of doom".
 
-console.log("Starting homework...");
+// console.log("Starting homework...");
 
-setTimeout(() => {
-    console.log("Homework done!");
-    console.log("Starting dinner...");
+// setTimeout(() => {
+//     console.log("Homework done!");
+//     console.log("Starting dinner...");
     
-    setTimeout(() => {
-        console.log("Dinner done!");
-        console.log("Getting ready to go out...");
+//     setTimeout(() => {
+//         console.log("Dinner done!");
+//         console.log("Getting ready to go out...");
 
-        setTimeout(() => {
-            console.log("Going to the playground!");
-        }, 1000); // after dinner
-    }, 1500); // dinner time
-}, 2000); // homework time
+//         setTimeout(() => {
+//             console.log("Going to the playground!");
+//         }, 1000); // after dinner
+//     }, 1500); // dinner time
+// }, 2000); // homework time
+
+// PROMISES FUNCTION 
+
+// const p = new Promise((resolve, reject)=>{
+//     //resolve()
+//     let done=true
+//     setTimeout(()=>{
+//         if(done){
+//             resolve({name:"Suhani", age:18}) 
+//         }else{
+//             reject("Work not completed")}
+//     },5000)
+// })
+// p.then((data)=>{
+//     console.log(data.name)
+// })
+// .catch((err)=>{
+//     console.log(err)
+// })
+// .finally(()=>{
+//     console.log("Finally block")
+// })
+
+// PROMISE CHAINING
+function doHomeWork(){
+    const p = new Promise((resolve, reject)=>{
+        let done=true
+        setTimeout(()=>{
+            if(done){
+                resolve("Homework done!") 
+            }else{
+                reject("Homework not completed")}
+        },2000)
+    })
+    return p
+}
+
+
+
