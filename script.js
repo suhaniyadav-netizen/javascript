@@ -226,18 +226,63 @@
 // })
 
 // PROMISE CHAINING
-function doHomeWork(){
-    const p = new Promise((resolve, reject)=>{
-        let done=true
+// function doHomeWork(){
+//     const p = new Promise((resolve, reject)=>{
+//         let done=true
+//         setTimeout(()=>{
+//             if(done){
+//                 resolve("Homework done!") 
+//             }else{
+//                 reject("Homework not completed")}
+//         },2000)
+//     })
+//     return p
+// }
+
+
+
+// ASYNC AWAIT FUNCTION
+// It is a syntactic sugar over promises and it makes asynchronous code look and behave 
+// more like synchronous code. It is built on top of promises and provides a cleaner and 
+// more readable syntax for working with asynchronous operations.
+
+// Sychronous code is executed in a sequence, where each operation waits for
+// the previous one to complete before moving on to the next.
+// 
+
+function orderFood(){
+    return new Promise((resolve, reject)=>{
         setTimeout(()=>{
-            if(done){
-                resolve("Homework done!") 
-            }else{
-                reject("Homework not completed")}
-        },2000)
+            console.log("Food Ordered !")
+            resolve("Food Ordered")
+        },2000) 
     })
-    return p
 }
 
 
+function prepareFood(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            console.log("Food Prepared !")
+            resolve("Food Prepared")
+        },2000) 
+    })
+}
 
+
+function deliverFood(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            console.log("Food Delivered !")
+            resolve()
+        },2000) 
+    })
+}
+
+
+async function foodOrder(){
+    await orderFood()
+    await prepareFood()
+    await deliverFood()
+}
+foodOrder()
