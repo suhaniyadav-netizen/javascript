@@ -250,39 +250,61 @@
 // the previous one to complete before moving on to the next.
 // 
 
-function orderFood(){
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            console.log("Food Ordered !")
-            resolve("Food Ordered")
-        },2000) 
-    })
+// function orderFood(){
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             console.log("Food Ordered !")
+//             resolve("Food Ordered")
+//         },2000) 
+//     })
+// }
+
+
+// function prepareFood(){
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             console.log("Food Prepared !")
+//             resolve("Food Prepared")
+//         },2000) 
+//     })
+// }
+
+
+// function deliverFood(){
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             console.log("Food Delivered !")
+//             resolve()
+//         },2000) 
+//     })
+// }
+
+
+// async function foodOrder(){
+//     await orderFood()
+//     await prepareFood()
+//     await deliverFood()
+// }
+// foodOrder()
+
+
+// ERROR HANDLING IN ASYNC AWAIT
+
+console.log("First line")
+try{
+    // let sample = 345
+    // console.log(sample)
+    // console.log("Line after  sample")    // Error aate hi catch me jayega. wont run iske bad ka kuch bhi
+    let age = 16
+    if(age<18){
+        // console.log("Minor")
+        throw new Error("This is a custom error")       // Used for custom errors 
+    }
+
+}catch(err){                            // only runs when error arises(RuntimeError)
+    console.log(err)
+    console.warn(err)                   // Medium warning
+    console.error(err)                  // High error
+    console.log("We got an error")
 }
-
-
-function prepareFood(){
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            console.log("Food Prepared !")
-            resolve("Food Prepared")
-        },2000) 
-    })
-}
-
-
-function deliverFood(){
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            console.log("Food Delivered !")
-            resolve()
-        },2000) 
-    })
-}
-
-
-async function foodOrder(){
-    await orderFood()
-    await prepareFood()
-    await deliverFood()
-}
-foodOrder()
+console.log("Last line")
